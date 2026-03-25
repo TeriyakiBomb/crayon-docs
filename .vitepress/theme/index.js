@@ -2,6 +2,7 @@
 import { h } from "vue";
 import DefaultTheme from "vitepress/theme";
 import "./crayon.scss";
+import "virtual:group-icons.css";
 
 /** @type {import('vitepress').Theme} */
 export default {

@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { groupIconVitePlugin } from "vitepress-plugin-group-icons";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -37,6 +38,7 @@ export default defineConfig({
     siteTitle: false,
   },
   vite: {
+    plugins: [groupIconVitePlugin()],
     css: {
       preprocessorOptions: {
         scss: {
