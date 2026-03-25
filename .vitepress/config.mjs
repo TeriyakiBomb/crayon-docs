@@ -5,6 +5,9 @@ export default defineConfig({
   title: "Crayon",
   description: "Crayon is a Sass-based utility CSS toolkit",
   themeConfig: {
+    search: {
+      provider: "local",
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
