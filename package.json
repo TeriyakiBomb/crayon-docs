@@ -3,5 +3,9 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "crayon-css": "^0.6.0",
+    "sass-embedded": "^1.98.0"
   }
 }

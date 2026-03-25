@@ -30,4 +30,13 @@ export default defineConfig({
       },
     ],
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          loadPaths: ["node_modules"],
+        },
+      },
+    },
+  },
 });
