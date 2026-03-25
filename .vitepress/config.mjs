@@ -5,9 +5,6 @@ export default defineConfig({
   title: "Crayon",
   description: "Crayon is a Sass-based utility CSS toolkit",
   themeConfig: {
-    search: {
-      provider: "local",
-    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
@@ -32,6 +29,11 @@ export default defineConfig({
         link: "https://yarnpkg.com/package?q=crayon-css&name=crayon-css",
       },
     ],
+    search: {
+      provider: "local",
+    },
+    logo: "./images/logo.svg",
+    siteTitle: false,
   },
   vite: {
     css: {
