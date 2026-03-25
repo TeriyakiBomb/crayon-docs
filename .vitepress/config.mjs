@@ -13,10 +13,11 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "Examples",
+        text: "Introduction",
         items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
+          { text: "TL;DR", link: "/tldr" },
+          { text: "What is Crayon?", link: "/introduction" },
+          { text: "Getting Started", link: "/installation" },
         ],
       },
     ],
