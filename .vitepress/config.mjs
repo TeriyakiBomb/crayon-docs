@@ -16,7 +16,6 @@ export default defineConfig({
       {
         text: "Introduction",
         items: [
-          { text: "TL;DR", link: "/tldr" },
           { text: "What is Crayon?", link: "/introduction" },
           { text: "Getting Started", link: "/installation" },
         ],
