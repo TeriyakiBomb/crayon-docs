@@ -6,3 +6,4 @@ node_modules/
 
 # VitePress cache
 .vitepress/cache/
+.DS_Store
