@@ -1,116 +1,120 @@
+# TL;DR
 
-# What is Crayon?
+Crayon is a Sass-based utility CSS toolkit focused on **maintainability.** It provides a combination of utility classes, Sass mixins, functions, CSS variables and powerful composition tools to keep you productive, while making your markup cleaner, more concise and your styles more manageable at scale.
 
-Crayon is a Sass-based utility CSS toolkit focused on maintainability. It's a little like tailwind, but intentionally smaller in scope.
-Not because it can do less, but because it has stronger opinions on what utility classes should actually do and delegates more to Sass and modern CSS standards.
+You choose whichever approach that suits the current situation and Crayon provides numerous ways of keeping everything tied to your central configuration, without introducing another set of rules or duplicating features that CSS and Sass already handle well.
 
+In some ways, it's a little like Tailwind, but intentionally smaller in scope.
 
-Crayon covers the basics with tailwind-style utility classes, they're fast and great to prototype layouts with:
+It does *less* *on* *purpose*. Crayon has stronger opinions about which values benefit from utility classes, while delegating everything else to Sass and modern CSS. It is opinionated about what it provides, but not about how you use it.
 
-- Layout
-- Display
-- Colours
-- Typography
-- Basic aesthetics (borders, radius)
+## Crayon? Why? What do?
 
-You've got exposed functions and mixins if you're using Sass, and CSS variables if you aren't. Lean on standard modern CSS for the rest. 
+This section is mostly about Crayon's philosophy. If you already know that this toolkit is for you, you can probably skip this section. If you're thinking "Why does this exist?" read on. Or not. I'm not your mum.
 
-Crayon's output is pretty small, its surface area learnable in an afternoon and instantly familiar if you already know tailwind. It also has several convenience features that aim to let you write maintainable styles at scale, with mixins and terse composition mixins.
+## Tailwind is awesome.
 
+For the last few years, I've been a big advocate of Tailwind. [BEM](https://getbem.com) and arbitrary CSS naming just don't *scale* well, add cognitive load and give you whole *other thing* to maintain.
 
-## Config-first
+When working with **component systems** in Vue or Svelte, do you really need a second full set of style semantics that have to perpetually sync up? 
 
-Every scale in Crayon spacing, colours, type sizes, breakpoints, grid columns is defined in  `_config.scss`. Every utility class and every lookup function draws from it. Change `$base-size` from `4px` to `5px` and every spacing class, every`size()` call, every generated padding and margin updates in the next build. Sass is super easy to extend and modify with less ceremony than tailwind for simple modifications and vastly more flexibility when you want to get fancy. Everyting is publically available in Crayon, so go nuts.
+> What was the name of that container again? `.box--news_other-green-2`? What file was it in?
 
+Components do a fantastic job of covering the things it needs to, styling belongs within the component. Simple. 
 
-## Tailwind is awesome
+This is a **huge** win for tailwind - it's simple once you understand it, uniform, (mostly)consistent and keeps design intent with the UI itself. Cool! And I can write it fast and prototype UI really quickly! This is awesome.
 
-For the last few years, I've advocated heavily for tailwind. BEM and arbitrary semantics just don't scale too well. When working with component systems, do you really need a second full set of style semantics that have to perpetually match up to your component system? We've all ended doing something like `.card--active--customer_other_customer2-red{}` Be honest. As applications and websites grow so does the cognitive load of the named presentation of these elements. It adds friction, it becomes tech debt.
+But then your app gets **larger**. And you work with *people*.
 
-Components also have semantic naming and organisation, the difference being they _do things_ too. As their function evolves they are naturally re-organised, abstracted. Presentation of components should be kept with the component. This is a huge win for tailwind - it's simple once you understand it - uniform, immediate, (mostly) consistent and keeps design intent where it should be while still allowing you to centralise access to important things like colour palettes, fonts and scale. Excellent! 
+Things start to get **messy.**
 
-But then your app gets larger. You've noticed more and more that developers are using `text-[12px]`, there's more and more components with 30 or more lines of class defs, they're getting hard to read.
+The official answer from the Tailwind team is: "use find and replace or multiple cursors, nest more components". 
 
-The answer from the Tailwind team is "use find and replace or multiple cursors, nest more components". While we agree in principle, reality is often more complicated.  In production, you can spend a lot of time hunting down classes and the single biggest weakness of tailwind is dark mode and breakpoints. They add huge amounts of noise to class lists. Responsive breakpoints, grouping and many extraneous styling classes are the worst culprits.
+While I agree in principle, reality is often more complicated. 
 
-You have a bunch of repeating text formatting you use EVERYWHERE, and a component won't cut it. Get ready to repeat yourself, or use @apply. Which you were told explicitly not to do. You're using tailwind in js? You're gonna need twMerge. You have a bunch of conditional styling, you're gonna need to use tailwind-variants. Wait...is this still co-located with my component? I've started to abstract this css...hrmm...
+In production, you can spend a lot of time hunting down arbitrary value classes, chasing the instances where someone has bent the rules, abused @apply. They add huge amounts of noise to class lists. Responsive breakpoints, dark mode and grouping classes are the worst culprits.
+
+A *slightly* straw-manny scenario:
+
+You have a bunch of repeating text formatting you use EVERYWHERE, and a component won't cut it. Get ready to repeat yourself, or use @apply. Which you were told explicitly not to do. You're using tailwind in js? You're gonna need twMerge. You have a bunch of conditional styling, you're gonna need to use tailwind-variants. Wait... is this still co-located with my component? I've started to abstract this css... hrmm...
 
 Well, here's the thing.
 
-## Sass is awesome
+## Sass is awesome.
 
-Sass is crazy powerful, you guys. Crayon is built with sass and exposes it's best things with it. Every utility class is available as a sass mixin, values are exposed as css variables and as sass functions. Everything that can be a map is a map, allowing you to easily extend the functionality. All within CSS. We can (and do) create power compositional mixins that apply many classes at once with a nice DSL. It's also nice just...writing CSS. You want some logic? Cool, go for it. You can learn sass in an afternoon.
+Sass is crazy powerful, you guys. 
 
-The elephant in the room with tailwind is and has always been...tailwind. It adds noise to markup, weight to the DOM and eventually it can become difficult to maintain at scale. 
+Crayon is built with Sass and exposes its best things with it. Every utility class is available as a [sass mixin](https://sass-lang.com/documentation/at-rules/mixin/), values are exposed as CSS variables and as sass functions. Crayon is pretty small and very easy to pull apart.
+
+Everything that can be a map is a map, allowing you to easily extend the functionality. All within CSS. We can (and do) create power compositional mixins that apply many classes at once with a nice DSL. It's also nice just...writing CSS. You want some logic? Cool, go for it. You can learn Sass in an afternoon.
+
+The elephant in the room with Tailwind is and has always been...Tailwind. It adds noise to markup, weight to the DOM and eventually it can become difficult to maintain at scale.
 
 ```html
 <button type="button" class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Default</button>
 ```
 
-More recently with Tailwind 4 has moved closer to standard CSS, exposing it's values as CSS variables. Crayon does this too, but leans in harder on standards. 
+An example pulled from [flowbite](https://flowbite.com/docs/components/buttons/). This is not a complex Tailwind example.
 
-Crayon is a set of utilities, not a framework. For what you don't have provided, you have sass and web standards.
+### A utility class is a design decision. 
 
-Tailwind has strong opinions about how you write it-it's all or nothing, crayon is much less opinionated about this. You can choose any number of ways to use the available tools, or mix and match them if you wish. You're an adult, we trust you.
+When you write `p-4`, you're not just setting `padding: 1rem;` you're saying *this element uses the fourth multiple of a base size.* Which is defined centrally and can be changed globally.
 
-```html
-<style lang="scss" scoped>
-  @use "crayon" as *;
-  .thing{
-    color: color("white");
-    @include bg("brand"); 
-    @include size(12);
-    
-    @include dark {
-      background-color: color("red-500");
-    }
-    
-    @include size("xl") {
-      @inlcude width(24);
-    }
-  }
-</style>
-```
+That's **super useful** and scalable.
 
-You don't have to use it's utility classes at all if you don't want. The above is completely valid, and can be mixed with inline utility classes. Crayon is a box of tools and in the grand scheme of things, CSS is mostly quite straightforward. 
+When you write `overflow-hidden`, you're just saying `overflow: hidden` but also adding noise to your markup.
 
-The critical peice being `scoped` . Scoped CSS has always been a good alternative to tailwind and modern CSS goes even further, `@scoped` is widely available, we can levarage that, media queries exist. We do not need a custom solution for container queries...you just write a container query. Svelte and Astro components are scoped by default, s'all good.
+There's no scale, no central config, no shared decision. It's just a 1:1 alias for a CSS property, specified slightly differently, and more verbose.
 
-Crayon provides the thing that counts, centralising the values that can change. As long as values are tied to a variable or map, you're all good! Being co-located you get the same immediacy as tailwind, but leverage the more powerful composition capabilites and ergonomics of sass. Win-win? I think so.
+Writing that in a CSS block takes seconds. Crayon doesn't generate classes like that, and deliberately so. 
 
-You also centralise all of your modifiers (dark modes, breakpoints etc) rather than look in 12 places to update them in a component you can't decompose any further.
+Recently, Tailwind 4+ has moved closer to standard CSS, exposing it's values as CSS variables. Crayon does this too, but leans in harder on standards.
 
-Sass is not new, it is not sexy. But it's damned good and a tool a lot of larger project still reach for.
+#### 🍦Things that make good utility classes
 
-## Crayon vs Tailwind
-Crayon differs philosophically from Tailwind in a number of ways. This is not some statement that this approach is in any way "better" objectively, the world is complicated and few things are black and white. But Crayon seeks to address what we percieve to be shortcomings in the approach advocated for by Tailwind. Especially with established codebases with a decent amount of surface area.
+Spacing, sizing, colour, type size, layout columns. These are the things you'd otherwise maintain as scattered magic numbers across dozens of files, and they benefit enormously from being defined once and referenced consistently.
 
-### Utility classes
-**Both Crayon and Tailwind (And most other CSS tools in a post-Tailwind world) provide utility classes.**
+#### 💩Things that don't
 
-Tailwind utility classes cover the the majority of the things you can do do in CSS and strongly suggests you use those classes at all times. Tailwind 4+ provides CSS vars for values in addition to the utility classes, which enables a workflow quite a lot like Crayon. Tailwind also has `@apply` via PostCSS, though users are encouraged to avoid it's usage due the indirection it introduces. 
+Animation timings, gradient stops, transform values these are things you often write *once* per component, they're often one-off by nature. A utility class adds no *real* value over just writing the CSS or defining a custom class. So why do we do it?
 
-Crayon provides a subset of the core "most useful" Tailwind utility classes, corresponding mixins for the provided classes, as well as access to all of the variables (both in CSS and internal Sass) and functions. Crayon has far looser opinions on how you use tools it provides. Crayon shares the same opinion that whenever possible, CSS should be co-located within components or near the markup it relates to. Additionally that meaningful values should **always** be centralised and manageable from outside those components.
+**You're an adult, I trust you.**
 
+Crayon is a set of utilities, it is not a framework. For what you don't have provided, you have Sass and web standards. Tailwind has strong opinions about how you write it. It's all or nothing.  Crayon is much less opinionated about this. You can choose any number of ways to use the available tools, or mix and match them if you wish. The thing that counts is keeping values central and being able to continue moving quickly.
 
-### Why provide utility classes at all if everything is also a mixin?
-Crayon focuses on a fairly subjective list of core utility classes, mostly the things you reach for when scaffolding layouts. A handful of `p-`, `flex` and `bg-color` classes give you a lot of the *feel* of moving quickly with Tailwind, and do not add much noise to markup. Crayon intentionally draws a hard line at the more presentational/complex aspects of defining a layout however. This is when you should move into using mixins, variables and more regular CSS. You can find a full list of supported Tailwind classes here --insert link--
+You don't have to use Crayons utility classes at all if you don't want. Crayon is a box of tools and in the grand scheme of things, CSS is mostly quite straightforward and solves a ton of problems.
 
-A utility class is a design decision. When you write `.p-4`, you're not just setting `padding: 1rem`; you're saying *this element uses the fourth multiple of a base size*, which is defined centrally and can be changed globally. That's super useful.
+**Crayon is learnable in an afternoon and much of it is instantly familiar if you already know Tailwind. It also has several convenience features that aim to let you write maintainable styles at scale.**
 
-When you write `.overflow-hidden`, you're just saying `overflow: hidden` but adding noise to your markup. There's no scale, no central config, no shared decision, it's just a 1:1 alias for a CSS property. And it adds up. Writing that in a css block takes seconds. Crayon doesn't generate classes like that, and deliberately so. 
+---
 
-Spacing, sizing , colour, type size, layout columns. These are the the things you'd otherwise maintain as scattered magic numbers across dozens of files, and they benefit enormously from being defined once and referenced consistently. 
+## What Crayon leaves to CSS
 
-Animation timing, gradient stops, transform values these are things you often write once per component, they're often one-off by nature, and a utility class adds no *real* value over just writing the CSS or defining a custom class.
+Crayon doesn't try to cover everything. For anything that doesn't benefit from a shared configurable scale, the right answer is to write CSS. A few common examples:
 
+**Container queries.** Viewport breakpoints are global and project-wide, which is why wrapping them in `@include screen(md)` is worthwhile. Container breakpoints are the opposite: they're per-component, rarely shared, and the values only make sense in context. Writing `@container (min-width: 400px)` is as clear and concise as it needs to be.
+
+**Animations and transitions.** These are inherently expressive and one-off. A `transition-all` class doesn't tell you what's transitioning, at what speed, or why.
+
+**The same applies to:** transforms, filters, gradients, `clip-path`, `scroll-behavior`, and newer features like `@starting-style` and scroll-driven animations. CSS covers all of these well. Crayon wrapping them would add syntax without adding value.
+
+> **TL;DR** If you find yourself wanting a utility class for something Crayon doesn't have, ask whether it involves a shared scale or a repeated config value. If the answer is no, you can use vanilla CSS and that's fine, being scoped is the thing that prevents clashes.
+
+## Scoped CSS is critical
+
+Scoped CSS has always been a good alternative to tailwind and modern CSS goes even further, `@scoped` is widely available, we can leverage that, media queries exist. We do not need a custom solution for container queries...just write a container query. Svelte and Astro components are scoped by default, s'all good.
+
+Crayon provides the thing that counts, **centralising the values that can change.** As long as values are tied to a variable or map, you're all good! Being co-located you get the same immediacy as tailwind, but leverage the more powerful composition capabilities and ergonomics of sass. Win-win? I think so.
+
+You also centralise all of your modifiers (dark modes, breakpoints etc) rather than look in 12 places to update them.
 
 ### Conditional styles belong in your CSS, not your HTML
+
 Tailwind's `dark:bg-blue-500 hover:text-white md:flex` approach puts conditional logic in the markup. It works at small scale, but as components grow it becomes harder to read: a single element can carry a dozen or more classes encoding its normal state, hover state, dark mode state, and responsive variation all at once.
 
 Crayon takes the view that conditional styles are CSS, and should live in CSS. Instead of variant prefixes, Crayon gives you Sass mixins:
 
-```other
+```css
 @use 'crayon-css' as crayon;
 
 .button {
@@ -124,26 +128,38 @@ Crayon takes the view that conditional styles are CSS, and should live in CSS. I
 
 Your HTML stays clean. Your component's full visual behaviour including all its states in one place, in real CSS, without inventing a new language on top of it.
 
+```html
+<style lang="scss" scoped>
+  @use "crayon" as crayon;
+  .thing{
+    color: color("white");
+    @include bg("brand"); 
+    @include size(12);
+    
+    @include dark {
+      background-color: crayon.color("red-500");
+    }
+    
+    @include size("xl") {
+      @include width(24);
+    }
+  }
+</style>
+```
+
 Not using Sass? Crayon also generates named `@custom-media` declarations for every breakpoint and for dark mode, so you can write `@media (--md)` and `@media (--dark)` in plain CSS without any mixins. Support for custom-media is experimental and requires postCss. See the Custom Media Queries section.
 
-### Configuration and extensibility
-Tailwind has several mechanics for extending palettes, size ranges, theme definitions, plugins etc. Crayon has far less formal configuration and allows you to extend it's config directly. There's less ceremony and Sass is inherently VERY flexible and until vanilla CSS catches up, allows you to build powerful custom behaviours if you wish, it's a language after all. Most of the tools that work with Tailwind (PostCSS/LightningCSS) also work with Sass. Crayon at this time leaves most of this to you.
+## Config-first
 
-## Technical comparison and tradeoffs
+Every scale in Crayon spacing, colours, type sizes, breakpoints, grid columns is defined in  `_config.scss`. Every utility class and every lookup function draws from it. Change `$base-size` from `4px` to `5px` and every spacing class, every `size()` call, every generated padding and margin updates in on the next compile. 
 
-**TL;DR - it's fine.**
+Sass is super easy to extend with less ceremony than Tailwind for simple modifications and vastly more flexible when you want to get [fancy](https://sass-lang.com/documentation/at-rules/control/for/). Everything is easy to see in Crayon, it's a pretty small codebase so go nuts.
 
-Sass is effectively an entire language (albeit a simple one) that gets compiled to CSS. It is massively extensible and flexible but at a cost of the time taken to compile that CSS. 
+## Utility classes in Crayon
 
-A sass mixin is much more like a method, that can accept mutliple args and apply conditional logic. It also allows powerful mass generation of classes and features like Crayon's composition mixins.
+Crayon covers the basics with tailwind-style utility classes, they're fast and great to prototype layouts.
 
-But back to that cost - first run compile times for Sass might be up to a second or two for a larger project, but reloads are fast, in the ms range. Tailwind cold is always in the ms range. Tailwind also only generates the classes needed. Sass, by default will generate an entire CSS file, but also tree-shakes via purgeCSS, which is recommended. Bundle sizes for Crayon and Tailwind are comparable out of the box, but Crayon has fewer guardrails for this bundle size to increase, as sass allows you to generate reams of CSS classes if you desire. 
-
-As Tailwind builds classes on the fly and can do a couple of things that sass can't, like arbitrary values in utility classes. Eg. `text-[#d1d1d1]` Though this would be avoided in Crayon if it were possible. 
-
-## Tailwind Compatibility
-
-Most common Tailwind class names work in Crayon without changes. If you're migrating from Tailwind or working alongside it, the classes you reach for most often behave identically:
+Crayon uses the same utility class naming scheme as Tailwind. If you're migrating from Tailwind or working alongside it, the classes you reach for most, often behave identically:
 
 - **Spacing**: `p-4`, `mt-8`, `mx-auto`, `px-6`, `-mt-2`
 - **Sizing**: `w-full`, `h-screen`, `w-1/2`, `max-w-96`, `size-8`
@@ -152,24 +168,49 @@ Most common Tailwind class names work in Crayon without changes. If you're migra
 - **Layout**: `flex`, `grid`, `hidden`, `block`, `inline-flex`
 - **Flex**: `flex-row`, `flex-col`, `flex-wrap`, `flex-grow`
 
-**Where the line stops**
-Crayon does not support tailwinds feature set 1:1, it's just those categories. See the example file for a kitchen sink of the available stuff.
+There are some exceptions to this, but more details can be found further into the documentation.
+
+**Where the line stops:**
+Crayon does not support Tailwind's feature set 1:1, it's just those categories.
 
 **Where Crayon deliberately differs:**
 
-**No variant prefixes.** There are no `dark:, hover:, or md:` class variants. This is where Crayons mixins come in. In plain CSS, use generated `@custom-media` declarations — see Custom Media Queries.
+**No variant prefixes.** There are no `dark:, hover:, or md:` class variants. In Sass, use the provided mixins instead - see [Responsive, state, visibility & Dark Mode](craftdocs://open?blockId=24AA6738-58FA-496F-B8AD-A6B664954F9B&spaceId=b5bf9c2f-1d22-11c1-db08-80590e3ce232). In plain CSS, use generated `@custom-media` declarations - see Custom Media Queries.
 
-**No (well, few.) single-property utility classes.** Crayon doesn't generate classes for `overflow`, `cursor`, `position`, `animation`, `transition`, `transform`, `filter`, or `gradient` anything where the class is just a direct alias for one CSS property value. This rule gets bent when it comes to flexbox, grid etc. Basic layout and prototyping is cool. But lines like `bg-linear-to-r from-cyan-500 to-blue-500 via-red-200`...why?
+**No (well, fewer.) single-property utility classes.** Crayon doesn't generate classes for `overflow`, `cursor`, `position`, `animation`, `transition`, `transform`, `filter`, or `gradient` - anything where the class is just a direct alias for one CSS property value. This rule gets bent when it comes to flexbox, grid etc. 
 
+Basic layout and prototyping is cool. But lines like `bg-linear-to-r from-cyan-500 to-blue-500 via-red-200` ...why?
 
-## What Crayon leaves to CSS
+## Mixins and functions in Crayon
 
-Crayon doesn't try to everything. For anything that doesn't benefit from a shared configurable scale, the right answer is to write CSS directly. A few common examples:
+Oh yeah, Crayon features a wide array of composition tools that allow for expressive but terse style building like flex direction and spacing in a one liner , making use of fluid layouts and the ability specify how a [property should change across a range of breakpoints](craftdocs://open?blockId=45B6721B-98CF-4A77-AF04-F72679489917&spaceId=b5bf9c2f-1d22-11c1-db08-80590e3ce232) and much more.
 
-**Container queries.** Viewport breakpoints are global and project-wide, which is why wrapping them in @include screen(md) is worthwhile. Container breakpoints are the opposite: they're per-component, rarely shared, and the values only make sense in context. Writing @container (min-width: 400px) is as clear and concise as it needs to be.
+#### Mixin?
 
-**Animations and transitions.** These are inherently expressive and one-off. A `transition-all` class doesn't tell you what's transitioning, at what speed, or why.  Write transitions where they live, in your component CSS, where the full context is visible. You can always abstract your own classes later and extend crayon - or just leave it 
+A sass mixin is a bit like an instance, that can accept multiple args and apply conditional logic. It also allows powerful mass generation of classes and features like Crayon's composition mixins.
 
-**The same applies to:** transforms, filters, gradients, `clip-path`, `scroll-behavior`, and newer features like `@starting-style` and scroll-driven animations. CSS covers all of these well. Crayon wrapping them would add syntax without adding value.
+For more info on how Sass mixins work:
 
-The broader pattern: if you find yourself wanting a utility class for something Crayon doesn't have, ask whether it involves a shared scale or a repeated config value. If the answer is no, it's CSS and that's fine.
+[Sass: @mixin and @include](https://sass-lang.com/documentation/at-rules/mixin/)
+
+There are also functions, which are well...functions? 
+
+```css
+background: crayon.color("blue-500");
+```
+
+## Comparison and tradeoffs
+
+**TL;DR - it's fine.**
+
+Sass is effectively an entire language (albeit a simple one) that gets compiled to CSS. It is massively extensible and flexible but at a cost of the time taken to compile that CSS. 
+
+First run compile times for Sass might be up to a second or two for a larger project, but reloads are fast, in the ms range. 
+
+Tailwind compiles always in the ms range. Tailwind also only generates the classes needed. 
+
+Sass, by default will generate an entire CSS file, but also tree-shakes via purgeCSS, which is recommended. 
+
+Bundle sizes for Crayon and Tailwind are comparable out of the box, but Crayon has fewer guardrails for this bundle size to increase, as sass allows you to generate reams of CSS classes if you desire. 
+
+As Tailwind builds classes on the fly and can do a couple of things that sass can't, like arbitrary values in utility classes. Eg. `text-[#d1d1d1]` Though this pattern would be avoided in Crayon if it were possible.

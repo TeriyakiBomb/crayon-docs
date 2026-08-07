@@ -8,5 +8,8 @@
     "crayon-css": "^0.6.0",
     "sass-embedded": "^1.98.0",
     "vitepress-plugin-group-icons": "^1.7.1"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
   }
 }
