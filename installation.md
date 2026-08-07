@@ -13,15 +13,18 @@ It's just some sass files after all, so it'll work anywhere Sass does. Though se
 
 
 ```sh [yarn]
-$ yarn add crayon-css sass-embedded
+$ yarn add crayon-css
+$ yarn add --dev sass-embedded
 ```
 
 ```sh [pnpm]
-$ pnpm add crayon-css sass-embedded
+$ pnpm add crayon-css
+$ pnpm add --save-dev sass-embedded
 ```
 
 ```sh [npm]
-$ npm install crayon-css sass-embedded
+$ npm install crayon-css
+$ npm install --save-dev sass-embedded
 ```
 
 :::
@@ -40,9 +43,9 @@ Import it in `main.js` / `main.ts`:
 import './assets/main.scss'
 ```
 
-Use Crayon's functions in component `<style>` blocks:
+Use Crayon's functions and mixins in component `<style>` blocks:
 
-```html
+```vue
 <style lang="scss" scoped>
 @use 'crayon-css' as crayon;
 
