@@ -11,9 +11,6 @@ It's just some sass files after all, so it'll work anywhere Sass does. Though se
 
 ::: code-group
 
-```sh [npm]
-$ npm install crayon-css sass-embedded
-```
 
 ```sh [yarn]
 $ yarn add crayon-css sass-embedded
@@ -23,6 +20,10 @@ $ yarn add crayon-css sass-embedded
 $ pnpm add crayon-css sass-embedded
 ```
 
+```sh [npm]
+$ npm install crayon-css sass-embedded
+```
+
 :::
 
 ## Vue/Vite
@@ -30,7 +31,7 @@ $ pnpm add crayon-css sass-embedded
 Create a global stylesheet, e.g. `src/assets/main.scss`:
 
 ```scss
-@use 'crayon-css';
+@use 'crayon-css' as crayon;
 ```
 
 Import it in `main.js` / `main.ts`:
@@ -63,7 +64,7 @@ Add to your root `+layout.svelte`:
 
 ```svelte
 <style lang="scss">
-@use 'crayon-css';
+@use 'crayon-css' as crayon;
 </style>
 ```
 
@@ -107,7 +108,7 @@ export default defineConfig({
 Create `src/styles/crayon.scss`:
 
 ```scss
-@use 'crayon-css';
+@use 'crayon-css' as crayon;
 ```
 
 Import it in your base layout frontmatter so it applies everywhere:
@@ -155,7 +156,7 @@ Add a Sass entry point and import it in `app.js`:
 
 ```scss
 // app/styles/crayon.scss
-@use 'crayon-css';
+@use 'crayon-css' as crayon;
 ```
 
 ```js
