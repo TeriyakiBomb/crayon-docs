@@ -9,15 +9,16 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
+      { text: "What is Crayon?", link: "/docs/introduction" },
+      { text: "Getting Started", link: "/docs/installation" },
     ],
 
     sidebar: [
       {
         text: "Introduction",
         items: [
-          { text: "What is Crayon?", link: "/introduction" },
-          { text: "Getting Started", link: "/installation" },
+          { text: "What is Crayon?", link: "/docs/introduction" },
+          { text: "Getting Started", link: "/docs/installation" },
         ],
       },
     ],

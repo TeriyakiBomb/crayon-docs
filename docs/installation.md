@@ -232,7 +232,7 @@ export default defineConfig({
 
 ## Editor tools
 
-It's recommend to install the **[some-sass](https://github.com/wkillerud/some-sass)** LSP.
+For `@include` and function autocomplete in Sass files and scoped `<style lang="scss">` or `<style lang="sass">` blocks, we recommend installing the **[some-sass](https://github.com/wkillerud/some-sass)** LSP.
 
 - **VS Code**: Install the [Some Sass](https://marketplace.visualstudio.com/items?itemName=SomewhatStationery.some-sass) extension from the marketplace
-- **Other editors**: The standalone `some-sass-language-server` npm package works with any LSP-compatible editor like Vim or Helix
+- **Other editors**: The standalone `some-sass-language-server` NPM package works with any LSP-compatible editor like Neovim or Helix.
