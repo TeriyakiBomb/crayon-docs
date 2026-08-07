@@ -1,6 +1,6 @@
 # Getting Started
 
-Crayon works best with frameworks that support co-located scoped `<style>` blocks. We'll cover install instructions for Vue, Svelte, Astro, and Ember. 
+Crayon works best with frameworks that support co-located scoped `<style>` blocks. We'll cover install instructions for Vue, Svelte, Astro, and Ember, plus an experimental setup for React.
 It's just some sass files after all, so it'll work anywhere Sass does. Though setup is especially straightforward with Vite. (Isn't everything just better with Vite?)
 
 ::: tip :writing_hand: Remember 
@@ -169,7 +169,7 @@ import './styles/crayon.scss';
 
 For scoped component styles (Highly recommended), set up [ember-scoped-css](https://github.com/auditboard/ember-scoped-css):
 
-```html
+```gjs
 <template>
   <div class="card bg-blue-500">Hello</div>
   <style lang="scss" scoped>
@@ -181,22 +181,69 @@ For scoped component styles (Highly recommended), set up [ember-scoped-css](http
   </style>
 </template>
 ```
+## React (Experimental)
+
+::: warning React support is not yet official
+Crayon can be used in React projects that compile Sass, but the recommended component-scoped workflow has not yet been tested thorougly.
+Third-party tools such as [styled-jsx](https://github.com/vercel/styled-jsx) or [Astroturf](https://astroturfcss.github.io/astroturf/) can work, but these integrations are not officially supported by Crayon.
+:::
+
+### Vite
+
+Create a global stylesheet, e.g. `src/assets/main.scss`:
+
+```scss
+@use 'crayon-css' as crayon;
+```
+
+Import it in `main.jsx` / `main.tsx`:
+
+```tsx
+import './assets/main.scss'
+```
+
+### Next.js
+
+Configure Next.js to use `sass-embedded`:
+
+```ts
+// next.config.ts
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  sassOptions: {
+    implementation: 'sass-embedded',
+  },
+}
+
+export default nextConfig
+```
+
+Create `app/globals.scss`:
+
+```scss
+@use 'crayon-css' as crayon;
+```
+
+Import it in the root layout:
+
+```tsx
+// app/layout.tsx
+import './globals.scss'
+```
+
 ## SCSS Namespace
 
 We recommend namspacing under `crayon`:
 
-```
+```scss
 @use 'crayon-css' as crayon;
-
-.button {
-  background: crayon.color("blue-500");
-  @include crayon.hover { background: crayon.color("blue-600"); }
 }
 ```
 
 But you can skip this entirely, import with `as *`:
 
-```
+```scss
 @use 'crayon-css' as *;
 
 .button {
