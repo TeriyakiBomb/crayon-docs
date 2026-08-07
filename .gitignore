@@ -7,3 +7,7 @@ node_modules/
 # VitePress cache
 .vitepress/cache/
 .DS_Store
+/.vitepress/cache/deps/vitepress___@vue_devtools-api.js
+/.vitepress/cache/deps/vitepress___@vue_devtools-api.js.map
+/.vitepress/cache/deps/vitepress___@vueuse_core.js
+/.vitepress/cache/deps/vue.js
