@@ -194,7 +194,7 @@ We recommend namspacing under `crayon`:
 }
 ```
 
-But you can skip this entirely, import with `as \*`:
+But you can skip this entirely, import with `as *`:
 
 ```
 @use 'crayon-css' as *;
@@ -205,11 +205,11 @@ But you can skip this entirely, import with `as \*`:
 }
 ```
 
-Watch for name collisions with other Sass files if you use `as \*`. Don't say you weren't warned ;)
+Watch for name collisions with other Sass files if you use `as *`. Don't say you weren't warned ;)
 
 ## PurgeCSS
 
-Crayon generates all utility classes by default. In production, you should use [PurgeCSS](https://purgecss.com/getting-started.html) trims this to only what's used in your markup. A generic setup in vite might look a little like this:
+Crayon generates all utility classes by default. In production, [PurgeCSS](https://purgecss.com/getting-started.html) trims this to only what's used in your markup. A generic setup in Vite might look a little like this:
 
 ```js
 import purgecss from '@fullhuman/postcss-purgecss'
@@ -229,7 +229,6 @@ export default defineConfig({
   }
 })
 ```
-PurgeCSS is known for how aggressively it will prune unused classes - If classes are dynamically assigned, you could do so in such a way that the entire class name is visible in the codebase, or if that is not possible, you can add it to the purgeCSS safelist.
 
 ## Editor tools
 
