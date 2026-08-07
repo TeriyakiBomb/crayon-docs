@@ -34,7 +34,7 @@ export default defineConfig({
     search: {
       provider: "local",
     },
-    logo: "./images/logo.svg",
+    logo: "/logo.svg",
     siteTitle: false,
   },
   vite: {
