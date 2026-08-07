@@ -86,8 +86,6 @@ You don't have to use Crayons utility classes at all if you don't want. Crayon i
 
 **Crayon is learnable in an afternoon and much of it is instantly familiar if you already know Tailwind. It also has several convenience features that aim to let you write maintainable styles at scale.**
 
----
-
 ## What Crayon leaves to CSS
 
 Crayon doesn't try to cover everything. For anything that doesn't benefit from a shared configurable scale, the right answer is to write CSS. A few common examples:
@@ -114,7 +112,9 @@ Tailwind's `dark:bg-blue-500 hover:text-white md:flex` approach puts conditional
 
 Crayon takes the view that conditional styles are CSS, and should live in CSS. Instead of variant prefixes, Crayon gives you Sass mixins:
 
-```css
+::: code-group
+
+```scss
 @use 'crayon-css' as crayon;
 
 .button {
@@ -125,27 +125,64 @@ Crayon takes the view that conditional styles are CSS, and should live in CSS. I
   @include crayon.screen("md") { width: auto; }
 }
 ```
+```sass
+@use 'crayon-css' as crayon
+
+.button
+  background: crayon.color("blue-500")
+
+  +crayon.hover
+    background: crayon.color("blue-600")
+  +crayon.dark
+    background: crayon.color("blue-800")
+  +crayon.screen("md")
+    width: auto
+```
+
+:::
 
 Your HTML stays clean. Your component's full visual behaviour including all its states in one place, in real CSS, without inventing a new language on top of it.
 
-```html
+::: code-group
+
+```scss
 <style lang="scss" scoped>
-  @use "crayon" as crayon;
-  .thing{
-    color: color("white");
-    @include bg("brand"); 
-    @include size(12);
+  @use "crayon-css" as crayon;
+
+  .thing {
+    color: crayon.color("white");
+    @include crayon.bg("brand");
+    @include crayon.size(12);
     
-    @include dark {
+    @include crayon.dark {
       background-color: crayon.color("red-500");
     }
     
-    @include size("xl") {
-      @include width(24);
+    @include crayon.screen("xl") {
+      @include crayon.w(24);
     }
   }
 </style>
 ```
+
+```sass
+<style lang="sass" scoped>
+  @use "crayon-css" as crayon
+
+  .thing
+    color: crayon.color("white")
+    +crayon.bg("brand")
+    +crayon.size(12)
+
+    +crayon.dark
+      background-color: crayon.color("red-500")
+
+    +crayon.screen("xl")
+      +crayon.w(24)
+</style>
+```
+
+:::
 
 Not using Sass? Crayon also generates named `@custom-media` declarations for every breakpoint and for dark mode, so you can write `@media (--md)` and `@media (--dark)` in plain CSS without any mixins. Support for custom-media is experimental and requires postCss. See the Custom Media Queries section.
 
@@ -209,7 +246,9 @@ First run compile times for Sass might be up to a second or two for a larger pro
 
 Tailwind compiles always in the ms range. Tailwind also only generates the classes needed. 
 
-Sass, by default will generate an entire CSS file, but also tree-shakes via purgeCSS, which is recommended. 
+Sass, by default will generate an entire CSS file, but also tree-shakes via purgeCSS, which is recommended.
+
+Using inline `@use 'crayon-css' as crayon;` does add  cumulative cold-build time per component, but IRL has little effect on HMR or production bundle size with PurgeCSS.
 
 Bundle sizes for Crayon and Tailwind are comparable out of the box, but Crayon has fewer guardrails for this bundle size to increase, as sass allows you to generate reams of CSS classes if you desire. 
 
