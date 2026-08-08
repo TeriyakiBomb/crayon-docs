@@ -57,7 +57,7 @@ Width, height, and size classes use the same spacing scale, plus fractional clas
 </style>
 ```
 
-### Sass mixins
+### Sass functions
 
 ```markdown
 <style lang="scss">
