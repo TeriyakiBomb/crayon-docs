@@ -12,6 +12,7 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "What is Crayon?", link: "/docs/introduction" },
       { text: "Getting Started", link: "/docs/installation" },
+      { text: "API", link: "/api/index.html", target: "_new" },
     ],
 
     sidebar: [
