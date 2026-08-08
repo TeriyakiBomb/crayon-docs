@@ -4,9 +4,31 @@ outline: [2, 3]
 
 # Spacing, padding and margins
 
-The spacing scale is built on `$base-size` (4px by default). Size 4 = 4 × 4px = 16px = 1rem. 
+The spacing scale is built on `$base-size` (4px by default). Size 4 = 4 × 4px = 16px = 1rem.
 
-Every step in the spacing scale is also available as a CSS variable  `--size-4`, `--size-8`, `--size-0_5`
+Every step is also available as a CSS variable, such as `--size-4`, `--size-8`, or `--size-0_5`.
+
+## Sass mixins
+
+### Padding mixins
+
+<!--@include: ./reference/mixins/padding.md-->
+
+### Margin mixins
+
+Pass `$negative: true`, or use a `minus-*` mixin, for negative margins.
+
+<!--@include: ./reference/mixins/margin.md-->
+
+### Gap mixins
+
+<!--@include: ./reference/mixins/gap.md-->
+
+### Responsive range mixins
+
+Range mixins take a base size followed by named breakpoint overrides, such as `crayon.p-range(4, $md: 8, $lg: 12)`.
+
+<!--@include: ./reference/mixins/responsive-spacing.md-->
 
 ## Utility classes
 
@@ -24,6 +46,32 @@ Every step in the spacing scale is also available as a CSS variable  `--size-4`,
 
 ## Examples
 
+### Sass mixins
+
+::: code-group
+
+```scss
+.card {
+  @include crayon.p(4);
+  @include crayon.mx-auto;
+}
+
+.toolbar {
+  @include crayon.gap(2);
+}
+```
+
+```sass
+.card
+  +crayon.p(4)
+  +crayon.mx-auto
+
+.toolbar
+  +crayon.gap(2)
+```
+
+:::
+
 ### Utility classes
 
 ```html
@@ -33,38 +81,7 @@ Every step in the spacing scale is also available as a CSS variable  `--size-4`,
 <div class="m-4">Margin on all sides</div>
 <div class="mx-auto max-w-xl">Centred container</div>
 <div class="-mt-4">Negative top margin</div>
-<div class="size-12">Equal width and height</div>
 ```
-
-### Sass mixins
-
-::: code-group
-
-```scss
-.card {
-  @include crayon.p(4);
-  @include crayon.px(8);
-  @include crayon.max-w("xl");
-  @include crayon.mx-auto;
-}
-
-.avatar {
-  @include crayon.size(12);
-}
-```
-
-```sass
-.card
-  +crayon.p(4)
-  +crayon.px(8)
-  +crayon.max-w("xl")
-  +crayon.mx-auto
-
-.avatar
-  +crayon.size(12)
-```
-
-:::
 
 ### Sass functions
 
@@ -74,7 +91,6 @@ Every step in the spacing scale is also available as a CSS variable  `--size-4`,
 .card {
   padding: crayon.size(4) crayon.size(8);
   margin-top: -(crayon.size(4));
-  max-width: crayon.size(96);
 }
 ```
 
@@ -82,7 +98,6 @@ Every step in the spacing scale is also available as a CSS variable  `--size-4`,
 .card
   padding: crayon.size(4) crayon.size(8)
   margin-top: -(crayon.size(4))
-  max-width: crayon.size(96)
 ```
 
 :::
@@ -93,7 +108,6 @@ Every step in the spacing scale is also available as a CSS variable  `--size-4`,
 .card {
   padding: var(--size-4) var(--size-8);
   margin-top: calc(var(--size-4) * -1);
-  max-width: var(--size-96);
   margin-inline: auto;
 }
 ```
