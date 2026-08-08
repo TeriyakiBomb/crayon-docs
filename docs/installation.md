@@ -232,28 +232,6 @@ Import it in the root layout:
 import './globals.scss'
 ```
 
-## SCSS Namespace
-
-We recommend namspacing under `crayon`:
-
-```scss
-@use 'crayon-css' as crayon;
-}
-```
-
-But you can skip this entirely, import with `as *`:
-
-```scss
-@use 'crayon-css' as *;
-
-.button {
-  background: color("blue-500");
-  @include hover { background: color("blue-600"); }
-}
-```
-
-Watch for name collisions with other Sass files if you use `as *`. Don't say you weren't warned ;)
-
 ## PurgeCSS
 
 Crayon generates all utility classes by default. In production, [PurgeCSS](https://purgecss.com/getting-started.html) trims this to only what's used in your markup. A generic setup in Vite might look a little like this:
