@@ -1,15 +1,18 @@
 {
+  "packageManager": "yarn@4.18.0",
   "scripts": {
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
+    "docs:api": "sassdoc node_modules/crayon-css/src --dest public/api --no-update-notifier",
+    "docs:dev": "yarn docs:api && vitepress dev",
+    "docs:build": "yarn docs:api && vitepress build",
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "crayon-css": "^0.6.0",
+    "crayon-css": "https://github.com/TeriyakiBomb/crayon.git",
     "sass-embedded": "^1.98.0",
     "vitepress-plugin-group-icons": "^1.7.1"
   },
   "devDependencies": {
+    "sassdoc": "^2.7.4",
     "vitepress": "^1.6.4"
   }
 }

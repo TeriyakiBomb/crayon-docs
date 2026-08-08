@@ -11,3 +11,12 @@ node_modules/
 /.vitepress/cache/deps/vitepress___@vue_devtools-api.js.map
 /.vitepress/cache/deps/vitepress___@vueuse_core.js
 /.vitepress/cache/deps/vue.js
+
+# Yarn
+.yarn/*
+!.yarn/patches/
+!.yarn/plugins/
+!.yarn/releases/
+!.yarn/sdks/
+!.yarn/versions/
+.pnp.*
