@@ -21,6 +21,14 @@ export default defineConfig({
           { text: "Getting Started", link: "/docs/installation" },
         ],
       },
+      {
+        text: "Using Crayon",
+        items: [
+          { text: "Usage basics", link: "/docs/usage-basics" },
+          { text: "Spacing, padding and margin", link: "/docs/spacing-padding-and-margin" },
+        ],
+      },
+      { text: "Customisation", link: "/docs/customising-crayon" },
     ],
 
     socialLinks: [
