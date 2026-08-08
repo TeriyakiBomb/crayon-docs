@@ -27,7 +27,15 @@ export default defineConfig({
         text: "Using Crayon",
         items: [
           { text: "Usage basics", link: "/docs/usage-basics" },
-          { text: "Spacing, padding and margin", link: "/docs/spacing-padding-and-margin" },
+          {
+            text: "Spacing",
+            collapsed: false,
+            items: [
+              { text: "Padding", link: "/docs/spacing/padding" },
+              { text: "Margin", link: "/docs/spacing/margin" },
+              { text: "Gap", link: "/docs/spacing/gap" },
+            ],
+          },
           {
             text: "Sizing",
             collapsed: false,
