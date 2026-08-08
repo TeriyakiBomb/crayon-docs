@@ -1,0 +1,6 @@
+| Mixin | CSS properties |
+| --- | --- |
+| `block` | `display: block` |
+| `inline` | `display: inline` |
+| `inline-block` | `display: inline-block` |
+| `hidden` | `display: none` |

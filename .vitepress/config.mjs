@@ -45,6 +45,25 @@ export default defineConfig({
               { text: "Size", link: "/docs/sizing/size" },
             ],
           },
+          {
+            text: "Layout",
+            collapsed: false,
+            items: [
+              { text: "Display", link: "/docs/layout/display" },
+              { text: "Container", link: "/docs/layout/container" },
+              { text: "Flexbox", link: "/docs/layout/flexbox" },
+              { text: "Flex ordering", link: "/docs/layout/flex-ordering" },
+              { text: "Grid", link: "/docs/layout/grid" },
+            ],
+          },
+          {
+            text: "Borders",
+            collapsed: false,
+            items: [
+              { text: "Borders", link: "/docs/borders/borders" },
+              { text: "Divide", link: "/docs/borders/divide" },
+            ],
+          },
         ],
       },
       { text: "Customisation", link: "/docs/customising-crayon" },
