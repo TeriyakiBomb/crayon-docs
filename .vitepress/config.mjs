@@ -65,6 +65,7 @@ export default defineConfig({
             ],
           },
           { text: "Colors", link: "/docs/colors" },
+          { text: "Typography", link: "/docs/typography" },
         ],
       },
       { text: "Customisation", link: "/docs/customising-crayon" },
