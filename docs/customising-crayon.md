@@ -13,4 +13,4 @@ All defaults live in `src/_config.scss`. To override them, create a wrapper file
 );
 ```
 
-Then `@use` your wrapper everywhere instead of `crayon-css` directly. @forward is a whole larger topic in Sass. For more info, see [Sass: @forward]((https://sass-lang.com/documentation/at-rules/forward/#configuring-modules))
+Then `@use` your wrapper everywhere instead of `crayon-css` directly. @forward is a whole larger topic in Sass. For more info, see [Sass: @forward](https://sass-lang.com/documentation/at-rules/forward/#configuring-modules)
