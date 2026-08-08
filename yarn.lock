@@ -1793,12 +1793,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crayon-css@https://github.com/TeriyakiBomb/crayon.git":
+"crayon-css@https://github.com/TeriyakiBomb/crayon.git#head=main":
   version: 0.9.2
-  resolution: "crayon-css@git+ssh://git@github.com/TeriyakiBomb/crayon.git#commit=b9c8375b572db1127c125f92b212b35af4d7b133"
+  resolution: "crayon-css@https://github.com/TeriyakiBomb/crayon.git#commit=424d10dc6769599597ce2e9ebb71152867a3bd8d"
   peerDependencies:
     sass-embedded: ">=1.79.0"
-  checksum: 10c0/cbc1588a90a9793c4a667f02d7675d804b71b3139282818393c14b0f8606b79a37cd97aa1ffc4705d63d7647a18c6d8ac8a19b24f0f379726cbf146bda8ada99
+  checksum: 10c0/a5abefc1b58717efe2b06e2b891642877cf2f6560e61dba91bd66e52c1344141812181543e569dbd1d10b51ac59c1f0abf82e2fd2e75697efd6f84fbcaa9647d
   languageName: node
   linkType: hard
 
@@ -3886,7 +3886,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    crayon-css: "https://github.com/TeriyakiBomb/crayon.git"
+    crayon-css: "https://github.com/TeriyakiBomb/crayon.git#head=main"
     sass-embedded: "npm:^1.98.0"
     sassdoc: "npm:^2.7.4"
     vitepress: "npm:^1.6.4"
