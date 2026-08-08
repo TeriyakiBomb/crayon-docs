@@ -5,6 +5,7 @@ import { groupIconVitePlugin } from "vitepress-plugin-group-icons";
 export default defineConfig({
   title: "Crayon",
   description: "Crayon is a Sass-based utility CSS toolkit",
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -26,6 +27,15 @@ export default defineConfig({
         items: [
           { text: "Usage basics", link: "/docs/usage-basics" },
           { text: "Spacing, padding and margin", link: "/docs/spacing-padding-and-margin" },
+          {
+            text: "Sizing",
+            collapsed: false,
+            items: [
+              { text: "Width", link: "/docs/sizing/width" },
+              { text: "Height", link: "/docs/sizing/height" },
+              { text: "Size", link: "/docs/sizing/size" },
+            ],
+          },
         ],
       },
       { text: "Customisation", link: "/docs/customising-crayon" },
