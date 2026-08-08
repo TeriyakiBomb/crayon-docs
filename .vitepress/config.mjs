@@ -64,6 +64,7 @@ export default defineConfig({
               { text: "Divide", link: "/docs/borders/divide" },
             ],
           },
+          { text: "Colors", link: "/docs/colors" },
         ],
       },
       { text: "Customisation", link: "/docs/customising-crayon" },
