@@ -4,7 +4,7 @@ outline: [2, 3]
 
 # Height
 
-Height values can use the spacing scale, breakpoint widths, or keyword values.
+Use the spacing scale or breakpoint. Height utilities also cover `auto`, `full`, viewport heights (`screen`, `svh`, `lvh`, `dvh`), intrinsic heights (`min`, `max`, `fit`), and `max-h-none`.
 
 ## Sass mixins
 

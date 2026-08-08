@@ -4,9 +4,11 @@ outline: [2, 3]
 
 # Width
 
-Width values can use the spacing scale, breakpoint widths, fractions derived from `$layout-divisions`, or keyword values.
+Use the spacing scale or breakpoint. Width utilities also cover `auto`, `full`, viewport widths (`screen`, `svw`, `lvw`, `dvw`), intrinsic widths (`min`, `max`, `fit`), fractions, and `max-w-none`.
 
-> To add new fraction denominators (e.g. eighths), add `8` to `$layout-divisions` in config.
+::: info 🥷 Didyaknow?
+To add new fraction denominators (e.g. eighths), add `8` to `$layout-divisions` in config.
+:::
 
 ## Sass mixins
 
