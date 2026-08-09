@@ -15,7 +15,7 @@ function selectRandomVariant(event) {
   <main class="h-svh">
     <section class="hero">
       <div class="max-w-1/3">
-        <h1>Crayon is a Sass-based CSS toolkit that's all about on working at scale</h1>
+        <h1>Crayon is a Sass-based CSS toolkit that's all about working at <span id="scale">scale</span></h1>
         <p>Yes, I've made this, in current year. Yes, I'm serious.</p>
 
         <div class="buttons">
@@ -73,10 +73,14 @@ main
 
   h1
     +c.text("5xl")
-    +c.font-weight("bold")
+    font-family: "Modak", system-ui, sans-serif
+    font-weight: 400
 
+    #scale
+      +c.text("7xl")
   p
-    +c.py(4)
+    +c.py(2)
+    +c.pl(4)
     +c.text("xl")
     +c.font-weight("medium")
 
@@ -85,10 +89,12 @@ main
   +c.hstack(6)
 
   model-viewer
-    height: c.px-to-rem(800px)
+    height: c.px-to-rem(700px)
     width: c.px-to-rem(800px)
 
   .buttons
+    +c.py(8)
+    +c.pl(6)
     +c.hstack(4)
 
     a
@@ -103,6 +109,16 @@ main
       +c.hover
        +c.bg("indigo-700")
 
+/* Yea yea, crayon doesn't support class based dark mode...yet */
+
+:global(.dark .tear)
+  background-image: url('/images/tear-dark.png')
+
+:global(.dark .hero h1), :global(.dark .hero p)
+  +c.text-color("amber-100")
+
+:global(.dark .hero .buttons a:not(:first-of-type))
+  +c.text-color("amber-100")
 
 
 </style>

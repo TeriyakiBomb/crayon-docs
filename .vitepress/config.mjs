@@ -7,6 +7,22 @@ export default defineConfig({
   description: "Crayon is a Sass-based utility CSS toolkit",
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
+    ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+    [
+      "link",
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossorigin: "",
+      },
+    ],
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Modak&display=swap",
+      },
+    ],
     [
       "script",
       {
