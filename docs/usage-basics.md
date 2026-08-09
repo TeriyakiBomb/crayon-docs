@@ -13,7 +13,8 @@ Crayon provides tools in several formats, _most_ things are available in more th
 
 If you've used Tailwind in the past, this works mostly the way you'd expect. Crayon shares the same naming conventions. The main thing to note here is that Crayon intentionally [does not cover every Tailwind utility class](/docs/introduction#utility-classes-in-crayon).
 
-All utility classes have a corresponding mixin with the same name. But remember, every class has a mixin, but not every mixin has a class. Utility classes are primarily for prototyping, or you can use them more extensively if you want.
+Most utility classes have a corresponding mixin with the same name. But remember, most classes has a mixin, but not every mixin has a class, there are mixins that can do a lot more. Utility classes are primarily for prototyping, or you can use them more extensively if you want.
+There are also utility classes that exist in Crayon that do not in Tailwind.
 
 ```html
 <div class="flex items-center gap-4">
