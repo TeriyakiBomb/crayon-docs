@@ -7,9 +7,12 @@
 | `min-w-{breakpoint}` | `min-width: {breakpoint width}` |
 | `max-w-{breakpoint}` | `max-width: {breakpoint width}` |
 | `w-{n}/{d}`          | `width: {fraction}`             |
+| `min-w-{n}/{d}`      | `min-width: {fraction}`         |
+| `max-w-{n}/{d}`      | `max-width: {fraction}`         |
 | `w-auto`             | `width: auto`                   |
 | `w-full`             | `width: 100%`                   |
 | `w-screen`           | `width: 100vw`                  |
+| `w-vw`               | `width: 100vw`                  |
 | `w-svw`              | `width: 100svw`                 |
 | `w-lvw`              | `width: 100lvw`                 |
 | `w-dvw`              | `width: 100dvw`                 |

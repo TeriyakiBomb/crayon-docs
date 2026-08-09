@@ -7,9 +7,12 @@
 | `min-h-{breakpoint}` | `min-height: {breakpoint width}` |
 | `max-h-{breakpoint}` | `max-height: {breakpoint width}` |
 | `h-{n}/{d}`          | `height: {fraction}`             |
+| `min-h-{n}/{d}`      | `min-height: {fraction}`         |
+| `max-h-{n}/{d}`      | `max-height: {fraction}`         |
 | `h-auto`             | `height: auto`                   |
 | `h-full`             | `height: 100%`                   |
 | `h-screen`           | `height: 100vh`                  |
+| `h-vh`               | `height: 100vh`                  |
 | `h-svh`              | `height: 100svh`                 |
 | `h-lvh`              | `height: 100lvh`                 |
 | `h-dvh`              | `height: 100dvh`                 |
