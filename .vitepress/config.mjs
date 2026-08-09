@@ -5,7 +5,23 @@ import { groupIconVitePlugin } from "vitepress-plugin-group-icons";
 export default defineConfig({
   title: "Crayon",
   description: "Crayon is a Sass-based utility CSS toolkit",
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ["link", { rel: "icon", href: "/favicon.ico" }],
+    [
+      "script",
+      {
+        type: "module",
+        src: "https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js",
+      },
+    ],
+  ],
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => tag === "model-viewer",
+      },
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
