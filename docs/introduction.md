@@ -1,3 +1,7 @@
+::: warning
+Crayon is not at 1.0 yet and the API and docs are undergoing changes frequently right now.
+:::
+
 # TL;DR
 
 Crayon is a Sass-based utility CSS toolkit focused on **maintainability.** It provides a combination of utility classes, Sass mixins, functions, CSS variables and powerful composition tools to keep you productive, while making your markup cleaner, more concise and your styles more manageable at scale.
@@ -212,7 +216,7 @@ Crayon does not support Tailwind's feature set 1:1, it's just those categories.
 
 **Where Crayon deliberately differs:**
 
-**No variant prefixes.** There are no `dark:, hover:, or md:` class variants. In Sass, use the provided mixins instead - see [Responsive, state, visibility & Dark Mode](craftdocs://open?blockId=24AA6738-58FA-496F-B8AD-A6B664954F9B&spaceId=b5bf9c2f-1d22-11c1-db08-80590e3ce232). In plain CSS, use generated `@custom-media` declarations - see Custom Media Queries.
+**No variant prefixes.** There are no `dark:`, `hover:`, or `md:` class variants. In Sass, use the provided mixins instead - see  [Responsive design](/docs/responsive) and [States and modes](/docs/states-and-modes). In plain CSS, use the generated [`@custom-media` declarations](/docs/css-variables#custom-media-queries).
 
 **No (well, fewer.) single-property utility classes.** Crayon doesn't generate classes for `overflow`, `cursor`, `position`, `animation`, `transition`, `transform`, `filter`, or `gradient` - anything where the class is just a direct alias for one CSS property value. This rule gets bent when it comes to flexbox, grid etc. 
 
@@ -220,7 +224,7 @@ Basic layout and prototyping is cool. But lines like `bg-linear-to-r from-cyan-5
 
 ## Mixins and functions in Crayon
 
-Oh yeah, Crayon features a wide array of composition tools that allow for expressive but terse style building like flex direction and spacing in a one liner , making use of fluid layouts and the ability specify how a [property should change across a range of breakpoints](craftdocs://open?blockId=45B6721B-98CF-4A77-AF04-F72679489917&spaceId=b5bf9c2f-1d22-11c1-db08-80590e3ce232) and much more.
+Oh yeah, Crayon features a wide array of composition tools that allow for expressive but terse style building like flex direction and spacing in a one liner , making use of fluid layouts and the ability specify how a [property should change across a range of breakpoints](/docs/range-mixins) and much more.
 
 #### Mixin?
 
