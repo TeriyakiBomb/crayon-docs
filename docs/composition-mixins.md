@@ -11,9 +11,10 @@ Absolutely not an idea ~stolen~ borrowed from SwiftUI^[Maybe slighty ~stolen~ bo
 
 ### vstack and stack
 
-`vstack($gap) and stack($gap)`
+`vstack($gap, $reverse: false)` and `stack($gap, $reverse: false)`
 
-Stack children vertically with a consistent gap from the spacing scale.
+Stack children vertically with a consistent gap from the spacing scale. Pass
+`$reverse: true` to use `column-reverse`.
 
 ::: code-group
 
@@ -25,6 +26,10 @@ Stack children vertically with a consistent gap from the spacing scale.
 .sidebar {
   @include crayon.stack(6); /* same thing, different name */
 }
+
+.newest-first {
+  @include crayon.vstack(4, $reverse: true);
+}
 ```
 
 ```sass
@@ -33,17 +38,22 @@ Stack children vertically with a consistent gap from the spacing scale.
 
 .sidebar
   +crayon.stack(6) /* same thing, different name */
+
+.newest-first
+  +crayon.vstack(4, $reverse: true)
 ```
 
 :::
 
-Output: `display: flex; flex-direction: column; gap: <spacing-scale-value>;`
+Output: `display: flex; flex-direction: column; gap: <spacing-scale-value>;`, or
+`flex-direction: column-reverse` when reversed.
 
 ### hstack
 
-`hstack($gap)`
+`hstack($gap, $reverse: false)`
 
 Lay children out in a horizontal row with a gap. No wrapping, items stay on one line. Use `cluster` if you want items to wrap when space is tight.
+Pass `$reverse: true` to use `row-reverse`.
 
 ::: code-group
 
@@ -51,16 +61,24 @@ Lay children out in a horizontal row with a gap. No wrapping, items stay on one 
 .toolbar {
   @include crayon.hstack(3); 
 }
+
+.toolbar-reversed {
+  @include crayon.hstack(3, $reverse: true);
+}
 ```
 
 ```sass
 .toolbar
   +crayon.hstack(3)
+
+.toolbar-reversed
+  +crayon.hstack(3, $reverse: true)
 ```
 
 :::
 
-Output: `display: flex; flex-direction: row; gap: <spacing-scale-value>;`
+Output: `display: flex; flex-direction: row; gap: <spacing-scale-value>;`, or
+`flex-direction: row-reverse` when reversed.
 
 ### cluster
 
