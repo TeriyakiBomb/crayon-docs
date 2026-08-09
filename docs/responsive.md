@@ -2,7 +2,7 @@
 outline: [2, 3]
 ---
 
-# Responsive, state, visibility & Dark Mode
+# Responsive design
 
 ## Breakpoints
 
@@ -76,13 +76,38 @@ A multi-breakpoint variant of `screen()`. Applies the same styles at each named 
 
 :::
 
-## Display
+## Orientation
 
-<!--@include: ./reference/utility-classes/display.md-->
+Use `portrait` and `landscape` to apply styles through orientation media queries.
+
+::: code-group
+
+```scss
+.gallery {
+  @include crayon.portrait {
+    @include crayon.grid-cols(1);
+  }
+
+  @include crayon.landscape {
+    @include crayon.grid-cols(3);
+  }
+}
+```
+
+```sass
+.gallery
+  +crayon.portrait
+    +crayon.grid-cols(1)
+
+  +crayon.landscape
+    +crayon.grid-cols(3)
+```
+
+:::
 
 ## Responsive Visibility
 
-Shorthand mixins for showing and hiding elements at a breakpoint. Useful for swapping between mobile and desktop layouts without a class toggle.
+Shorthand mixins for showing and hiding elements at a breakpoint. 
 
 <!--@include: ./reference/mixins/responsive-visibility.md-->
 
@@ -104,4 +129,3 @@ Shorthand mixins for showing and hiding elements at a breakpoint. Useful for swa
 ```
 
 :::
-

@@ -99,13 +99,11 @@ export default defineConfig({
           { text: "Colors", link: "/docs/colors" },
           { text: "Typography", link: "/docs/typography" },
           {
-            text: "Responsive & state",
+            text: "Responsive",
             collapsed: false,
             items: [
-              {
-                text: "Responsive & state",
-                link: "/docs/responsive-and-state",
-              },
+              { text: "Responsive design", link: "/docs/responsive" },
+              { text: "States & modes", link: "/docs/states-and-modes" },
               { text: "Range mixins", link: "/docs/range-mixins" },
             ],
           },
