@@ -77,6 +77,7 @@ export default defineConfig({
               { text: "Range mixins", link: "/docs/range-mixins" },
             ],
           },
+          { text: "Composition mixins", link: "/docs/composition-mixins" },
           { text: "Accessibility", link: "/docs/accessibility" },
         ],
       },
