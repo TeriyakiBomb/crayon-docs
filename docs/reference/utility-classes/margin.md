@@ -22,8 +22,8 @@
 | `-mb-{size}`       | `margin-bottom: -{size}`                      |
 | `-ml-{size}`       | `margin-left: -{size}`                        |
 | `m-auto`           | `margin: auto`                                |
-| `mx-auto`          | `margin-left: auto; margin-right: auto`       |
-| `my-auto`          | `margin-top: auto; margin-bottom: auto`       |
+| `mx-auto`, `center`, `center-x` | `margin-left: auto; margin-right: auto` |
+| `my-auto`, `center-y` | `margin-top: auto; margin-bottom: auto`    |
 | `mt-auto`          | `margin-top: auto`                            |
 | `mr-auto`          | `margin-right: auto`                          |
 | `mb-auto`          | `margin-bottom: auto`                         |

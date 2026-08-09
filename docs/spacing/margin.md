@@ -48,6 +48,8 @@ Pass a base size followed by named breakpoint overrides, such as `crayon.m-range
 ```html
 <div class="m-4">Margin on all sides</div>
 <div class="mx-auto">Centred with auto margins</div>
+<div class="center">The same horizontal centering using an alias</div>
+<div class="center-y">Automatic vertical margins</div>
 <div class="-mt-4">Negative top margin</div>
 ```
 
