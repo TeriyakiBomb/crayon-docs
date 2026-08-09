@@ -31,6 +31,17 @@ To change all colour output to OKLCH, set `$output-colorspace: oklch` in config.
 
 <!--@include: ./reference/utility-classes/colors.md-->
 
+## Opacity
+
+Opacity is in increments of 5%
+
+<!--@include: ./reference/utility-classes/opacity.md-->
+
+```html
+<div class="opacity-50">Half transparent</div>
+<div class="opacity-0">Invisible but present in layout</div>
+```
+
 ## Customising Colours
 
 To add your own brand colours alongside the Tailwind palette, pass them via `$colors` in your config file. Your colours are merged on top of Tailwind's, so you get both:
