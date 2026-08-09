@@ -6,7 +6,10 @@ All defaults live in `src/_config.scss`. To override them, create a wrapper file
 /* src/styles/_my-custom-config.scss */
 @forward 'crayon-css' with (
   $base-size: 8px,
-  $font-family: "Inter, system-ui, sans-serif",
+  $font-families: (
+    "sans": ("Inter", system-ui, sans-serif),
+  ),
+  $default-font: "sans",
   $colors: (
     "brand-50": #f0f0ff,
   )
