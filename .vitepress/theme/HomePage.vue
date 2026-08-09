@@ -33,6 +33,7 @@ function selectRandomVariant(event) {
        camera-controls
        auto-rotate
        interaction-prompt="none"
+       disable-zoom
        camera-orbit="-173.3deg 98.49deg 4.642m"
        field-of-view="30deg"
        touch-action="pan-y"
