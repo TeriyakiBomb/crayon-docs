@@ -68,11 +68,26 @@ export default defineConfig({
           { text: "Typography", link: "/docs/typography" },
           {
             text: "Responsive & state",
-            link: "/docs/responsive-and-state",
+            collapsed: false,
+            items: [
+              {
+                text: "Responsive & state",
+                link: "/docs/responsive-and-state",
+              },
+              { text: "Range mixins", link: "/docs/range-mixins" },
+            ],
           },
+          { text: "Accessibility", link: "/docs/accessibility" },
         ],
       },
-      { text: "Customisation", link: "/docs/customising-crayon" },
+      {
+        text: "Customisation",
+        collapsed: false,
+        items: [
+          { text: "Customising Crayon", link: "/docs/customising-crayon" },
+          { text: "CSS variables", link: "/docs/css-variables" },
+        ],
+      },
     ],
 
     socialLinks: [
