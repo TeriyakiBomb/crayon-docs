@@ -56,6 +56,30 @@ Font sizes, weights, and the font family are available as:
 --font-family
 ```
 
+### Borders
+
+Every entry in `$border-widths` is available as a CSS variable. The `DEFAULT`
+entry uses `--border`; named widths use `--border-{width}`:
+
+```css
+--border
+--border-0
+--border-2
+--border-4
+--border-8
+```
+
+Border radii follow the same convention. The `DEFAULT` entry uses `--rounded`,
+while named radii use `--rounded-{name}`:
+
+```css
+--rounded
+--rounded-none
+--rounded-sm
+--rounded-lg
+--rounded-full
+```
+
 ## Reference
 
 | **Category**   | **Pattern**            | **Example**               |
@@ -67,7 +91,8 @@ Font sizes, weights, and the font family are available as:
 | Font families  | `--font-{name}`        | `var(--font-sans)`        |
 | Letter spacing | `--tracking-{name}`    | `var(--tracking-tight)`   |
 | Line height    | `--leading-{name}`     | `var(--leading-relaxed)`  |
-| Borders        | `--rounded-{size}`     | `var(--rounded-lg)`       |
+| Border widths  | `--border[-{width}]`   | `var(--border-2)`         |
+| Border radii   | `--rounded[-{size}]`   | `var(--rounded-lg)`       |
 | Opacity        | `--opacity-{value}`    | `var(--opacity-50)`       |
 
 ## Disabling CSS variable output

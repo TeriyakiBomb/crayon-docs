@@ -341,7 +341,7 @@ Basically, instead of text or spacing snapping between sizes at hard breakpoints
 **Parameters:**
 
 - `$property`  any CSS property that accepts a size (`font-size`, `padding`, `gap`, `width`, etc.)
-- `$min-key`  minimum value. Numeric key (e.g. `4`) → size scale. String key (e.g. `"base"`) → font-size scale.
+- `$min-key`  minimum value. Numeric key (e.g. `4`) from the size scale. String (e.g. `"base"`) from the font-size scale.
 - `$max-key`  maximum value, same rules.
 - `$from`  breakpoint at which scaling starts. Named key from `$breakpoints`. Defaults to `"sm"` (640px).
 - `$to`  breakpoint at which scaling stops. Named key from `$breakpoints`. Defaults to `"xl"` (1280px).

@@ -12,14 +12,14 @@ function selectRandomVariant(event) {
 
 <template>
   <div class="tear"></div>
-  <main class="h-svh">
-    <section class="hero">
-      <div class="max-w-1/3">
-        <h1>Crayon is a Sass-based CSS toolkit that's all about working at <span id="scale">scale</span></h1>
-        <p>Yes, I've made this, in current year. Yes, I'm serious.</p>
+  <main class="flex mx-auto">
+    <section class="hero mx-auto">
+      <div class="max-w-xl">
+        <h1><span class="crayon-the-word">Crayon</span> is a Sass-based CSS toolkit that's all about working at <span id="scale">scale</span></h1>
+        <p>Yes, it's a CSS thing that isn't Tailwind, in current year.<br/> And yes, I'm serious.</p>
 
         <div class="buttons">
-          <a href="/docs/introduction">What is Crayon?</a>
+          <a href="/docs/introduction">Why would you do this?</a>
           <a href="/docs/installation">Getting Started</a>
         </div>
       </div>
@@ -34,7 +34,7 @@ function selectRandomVariant(event) {
        auto-rotate
        interaction-prompt="none"
        disable-zoom
-       camera-orbit="-173.3deg 98.49deg 4.642m"
+       camera-orbit="-173deg 87deg 4.65m"
        field-of-view="30deg"
        touch-action="pan-y"
        @load="selectRandomVariant"
@@ -44,8 +44,9 @@ function selectRandomVariant(event) {
 </template>
 
 <style lang="sass" scoped>
-@use 'crayon-css' as c
+@use './crayon-config' as c
 
+/* The following is an utterly appalling example of how to use Crayon. But can you imagine if I didn't use it on the homepage of the docs site for the thing? Madness. Anyway, why are you reading this? Surely you have better things to be doing right now, go outside. Hug a loved one. IDK.
 
 main
   background-image: url('/images/line.png')
@@ -53,8 +54,6 @@ main
   background-size: auto, cover
   height: calc(100dvh - var(--vp-nav-height))
 
-  +c.w-full
-  +c.center()
 
 .tear
   width: 100%;
@@ -68,34 +67,63 @@ main
 .hero
   +c.center("y")
   +c.h-full
+  +c.max-w("lg")
+  +c.stack(6, $reverse: true)
+  +c.pt(12)
+  +c.px(6)
+  +c.screen("md")
+    +c.hstack(6)
+    +c.px(12)
 
   h1, p
     +c.text-color("amber-950")
 
   h1
-    +c.text("5xl")
-    font-family: "Modak", system-ui, sans-serif
     font-weight: 400
+    +c.tracking("tight")
+    +c.font-family("heading")
+    +c.text("4xl")
+
+    +c.screen("lg")
+      +c.text("5xl")
+
+    .crayon-the-word, #scale
+      font-weight: 400
+
+    .crayon-the-word
+      +c.font-weight("bold")
+      +c.inline-block
+      background-position: center
+      background-repeat: no-repeat
+      background-size: 100% 100%
 
     #scale
-      +c.text("7xl")
+      +c.font-family("fancy")
+      +c.text("5xl")
+      transform: rotate(-4deg)
+      +c.inline-block
+      animation: slowmove 7s ease-in-out 0s infinite normal forwards;
+
+      +c.screen("lg")
+        +c.text("7xl")
+
   p
     +c.py(2)
-    +c.pl(4)
-    +c.text("xl")
-    +c.font-weight("medium")
+    +c.text("lg")
+    +c.font-weight("semibold")
 
-  +c.max-w("lg")
-  +c.center("y")
-  +c.hstack(6)
+    +c.screen("lg")
+      +c.text("xl")
+
 
   model-viewer
-    height: c.px-to-rem(700px)
-    width: c.px-to-rem(800px)
+    height: c.px-to-rem(600px)
+    min-height: 30dvh;
+    width: c.px-to-rem(600px)
+    max-width: 80dvw;
 
   .buttons
     +c.py(8)
-    +c.pl(6)
     +c.hstack(4)
 
     a

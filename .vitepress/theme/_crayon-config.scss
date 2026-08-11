@@ -1,0 +1,9 @@
+@forward "crayon-css" with (
+  $font-families: (
+    "sans": (sans-serif),
+    "serif": (Georgia, "Times New Roman", serif),
+    "mono": (ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace),
+    "heading": ("Elms Sans", system-ui, sans-serif),
+    "fancy": ("Modak", system-ui, sans-serif),
+  ),
+);

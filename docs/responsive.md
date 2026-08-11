@@ -3,6 +3,7 @@ outline: [2, 3]
 ---
 
 # Responsive design
+Before jumping straight into traditional breakpoint based responsivity, it's worth thinking whether a different approach might work better, such as [`clamp()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp) or Crayon's own [Fluid mixin](/docs/composition-mixins#💧fluid-mixin), which is actually ~~stolen~~ inspired by [this](https://utopia.fyi/)
 
 ## Breakpoints
 

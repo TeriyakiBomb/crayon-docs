@@ -20,7 +20,7 @@ export default defineConfig({
       "link",
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Modak&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Elms+Sans:wght@100..900&family=Modak&display=swap",
       },
     ],
     [
@@ -132,7 +132,7 @@ export default defineConfig({
     search: {
       provider: "local",
     },
-    logo: "/logo.svg",
+    logo: "/logo-small.svg",
     siteTitle: false,
   },
   vite: {
