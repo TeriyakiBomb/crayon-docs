@@ -5,7 +5,7 @@ outline: [2, 3]
 # Composition mixins
 
 Composition mixins are high-level shortcuts for patterns you write constantly. Rather than reaching for multiple mixins, a single mixin can  handles the whole thing when needed. All parameters are optional, so you can use only what you need.
-Absolutely not an idea ~stolen~ borrowed from SwiftUI^[Maybe slighty ~stolen~ borrowed from SwiftUI]
+Absolutely not an idea ~~stolen~~ borrowed from SwiftUI
 
 ## Stacks
 
@@ -352,6 +352,8 @@ Basically, instead of text or spacing snapping between sizes at hard breakpoints
 | ------------------------ | -------------------------------- |
 | `fluid-text($min, $max)` | `fluid("font-size", $min, $max)` |
 | `fluid-p($min, $max)`    | `fluid("padding", $min, $max)`   |
+| `fluid-px($min, $max)`   | `fluid("padding", $min, $max)`   |
+| `fluid-py($min, $max)`   | `fluid("padding", $min, $max)`   |
 | `fluid-gap($min, $max)`  | `fluid("gap", $min, $max)`       |
 
 All shorthands accept optional `$from` and `$to` as third and fourth arguments.
