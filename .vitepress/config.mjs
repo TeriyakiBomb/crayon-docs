@@ -31,6 +31,7 @@ export default defineConfig({
       },
     ],
   ],
+  lastUpdated: true,
   vue: {
     template: {
       compilerOptions: {
