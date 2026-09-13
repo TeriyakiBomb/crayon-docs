@@ -9,6 +9,10 @@ outline: [2, 3]
 The `dark` mixin wraps its content in a
 `prefers-color-scheme: dark` media query.
 
+::: tip
+You can use [`lightdark()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark) instead of the dark mode mixins, it's a good pattern!
+:::
+
 ::: code-group
 
 ```scss
