@@ -73,6 +73,7 @@ main
   +c.px(6)
   +c.screen("md")
     +c.hstack(6)
+    +c.items-center
     +c.px(12)
 
   h1, p
