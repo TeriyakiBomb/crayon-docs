@@ -1,6 +1,12 @@
 | Mixin | CSS properties |
 | --- | --- |
 | `border($key: "DEFAULT")` | `border-width` |
+| `border-x($key: "DEFAULT")` | Left and right `border-width` |
+| `border-y($key: "DEFAULT")` | Top and bottom `border-width` |
+| `border-t($key: "DEFAULT")` | `border-top-width` |
+| `border-r($key: "DEFAULT")` | `border-right-width` |
+| `border-b($key: "DEFAULT")` | `border-bottom-width` |
+| `border-l($key: "DEFAULT")` | `border-left-width` |
 | `rounded($key: "DEFAULT")` | `border-radius` |
 | `rounded-t($key: "DEFAULT")` | Top corner radii |
 | `rounded-b($key: "DEFAULT")` | Bottom corner radii |
