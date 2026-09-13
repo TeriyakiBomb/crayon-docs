@@ -9,3 +9,6 @@
 | `h-fit` | `height: fit-content` |
 | `h-min` | `height: min-content` |
 | `h-max` | `height: max-content` |
+| `min-h-full` | `min-height: 100%` |
+| `max-h-full` | `max-height: 100%` |
+| `max-h-none` | `max-height: none` |
