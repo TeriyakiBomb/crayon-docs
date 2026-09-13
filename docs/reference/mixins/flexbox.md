@@ -4,6 +4,8 @@
 | `inline-flex` | `display: inline-flex` |
 | `flex-row` | `flex-direction: row` |
 | `flex-col` | `flex-direction: column` |
+| `f-row` | Alias for `flex-row` |
+| `f-col` | Alias for `flex-col` |
 | `flex-row-reverse` | `flex-direction: row-reverse` |
 | `flex-col-reverse` | `flex-direction: column-reverse` |
 | `flex-wrap` | `flex-wrap: wrap` |
