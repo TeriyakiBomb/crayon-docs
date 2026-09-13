@@ -254,9 +254,11 @@ Padding, border radius, background, and border in a single call. `$px` and `$py`
 
 ## center
 
-`center($axis?)`
+`center($axis?, $children: false)`
 
-Flex centering shorthand. With no argument, it’ll center a single child both horizontally and vertically. Pass `x` or `y` to constrain to one axis.
+Centers the element itself using auto margins. With no argument, it’ll center on both axes. Pass `x` or `y` to constrain it to one axis.
+
+Set `$children: true` to use flexbox to center the element’s children instead. The same axis argument applies: `x` uses `justify-content`, `y` uses `align-items`, and no axis uses both.
 
 ::: code-group
 
@@ -275,6 +277,16 @@ Flex centering shorthand. With no argument, it’ll center a single child both h
 .sidebar {
   @include crayon.center(y);
 }
+
+/* Center children on both axes */
+.hero-content {
+  @include crayon.center($children: true);
+}
+
+/* Center children vertically */
+.toolbar {
+  @include crayon.center(y, $children: true);
+}
 ```
 
 ```sass
@@ -289,11 +301,19 @@ Flex centering shorthand. With no argument, it’ll center a single child both h
 /* Vertical only */
 .sidebar
   +crayon.center(y)
+
+/* Center children on both axes */
+.hero-content
+  +crayon.center($children: true)
+
+/* Center children vertically */
+.toolbar
+  +crayon.center(y, $children: true)
 ```
 
 :::
 
-`center` always sets `display: flex`. Without an argument it sets both `align-items: center` and `justify-content: center`. With `x`, only `justify-content: center`. With `y`, only `align-items: center`.
+By default, `center` applies `margin: auto`, `margin-inline: auto`, or `margin-block: auto`, depending on the axis. With `$children: true`, it sets `display: flex` and applies the corresponding flex alignment properties.
 
 At **last**, a solution to the hardest problem in software engineering. History has been made today, people.
 
