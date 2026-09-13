@@ -1794,11 +1794,11 @@ __metadata:
   linkType: hard
 
 "crayon-css@https://github.com/TeriyakiBomb/crayon.git#head=main":
-  version: 0.10.1
-  resolution: "crayon-css@https://github.com/TeriyakiBomb/crayon.git#commit=048cb26863119acd93d34d2d7511f72296d63204"
+  version: 0.11.0
+  resolution: "crayon-css@https://github.com/TeriyakiBomb/crayon.git#commit=293d5b2050f1046161e8ad15ea5434db58d173e4"
   peerDependencies:
     sass-embedded: ">=1.79.0"
-  checksum: 10c0/2049436ca5a8d73ee5d6f817272b8335d34f774e82279e87ea2131cf2a61d28f358bfc1c5da6b502239053c9a8324e4f50bc5d3a7b66a564b6247790e21e73e8
+  checksum: 10c0/42bd86c7b56b5c03afd18762f1dfe92386301d204d26ff268512226d3a01c1e1aeed54ecaa2c69ef2c1e0f076ffe96df990a420a16936f941badee8759116496
   languageName: node
   linkType: hard
 
