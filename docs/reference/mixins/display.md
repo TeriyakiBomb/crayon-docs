@@ -5,3 +5,4 @@
 | `inline` | `display: inline` |
 | `inline-block` | `display: inline-block` |
 | `hidden` | `display: none` |
+| `hide` | `display: none` |
